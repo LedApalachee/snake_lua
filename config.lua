@@ -4,7 +4,7 @@ food_char  = '%'
 wall_char  = '#'
 floor_char = ' '
 snake_char = 'O'
-toric_map  = true -- if true, then if snake goes in some wall, it will appear from opposite one
+toric_map  = true
 clear_cmd  = "clear" -- terminal command to clear the screen
 
 -- key bindings
