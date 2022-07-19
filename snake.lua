@@ -157,6 +157,8 @@ function input ()
 	local key = io.read(1)
 	while key == '\n' do key = io.read(1) end
 
+	local sdx, sdy = snake.dx, snake.dy
+
 	if key == key_move_up then
 		snake.dx, snake.dy =  0, -1
 	elseif key == key_move_down then
@@ -167,6 +169,10 @@ function input ()
 		snake.dx, snake.dy =  1,  0
 	elseif key == key_quit then
 		game_over("Good bye ;)\n")
+	end
+
+	if (snake_len > 1 and snake[1].x + snake.dx == snake[2].x and snake[1].y + snake.dy == snake[2].y) then
+		snake.dx, snake.dy = sdx, sdy
 	end
 end
 
